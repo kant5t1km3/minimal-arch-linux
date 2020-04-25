@@ -13,7 +13,7 @@ timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
 echo "Update Arch"
-pacman -Syu
+pacman -Syu --noconfirm
 
 echo "Creating partition tables"
 printf "n\n1\n4096\n+512M\nef00\nw\ny\n" | gdisk /dev/nvme0n1
