@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Updating packages"
-sudo pacman -Syu --noconfirm
+sudo pacman -Sy --noconfirm
 
 echo "Installing and configuring UFW"
 sudo pacman -S --noconfirm ufw
