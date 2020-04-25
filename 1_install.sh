@@ -13,7 +13,6 @@ timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
 echo "Refreshing PGP keys"
-sudo rm -r /etc/pacman.d/gnupg
 pacman-key --init
 pacman-key --populate archlinux
 pacman-key --refresh-keys
