@@ -28,10 +28,14 @@ sudo pacman -S --noconfirm ttf-roboto ttf-droid ttf-opensans ttf-dejavu ttf-libe
 
 echo "Downloading wallpapers"
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/buzz-andersen-E4944K_4SvI-unsplash.jpg
+wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/ahw57vapx9h41.png
+wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/snro7b9hso141.png
 
-echo "Installing Node.js LTS"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-nvm install --lts=erbium
+# echo "Installing Node.js LTS"
+sudo pacman -S --noconfirm nodejs-lts-erbium
+
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+# nvm install --lts=erbium
 
 echo "Increasing the amount of inotify watchers"
 echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
