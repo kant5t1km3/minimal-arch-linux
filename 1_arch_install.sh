@@ -12,7 +12,7 @@ echo "Updating system clock"
 timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
-echo "Update Arch"
+echo "Sync packages database"
 pacman -Sy --noconfirm
 
 echo "Creating partition tables"
