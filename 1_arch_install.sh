@@ -15,11 +15,8 @@ timedatectl set-timezone $continent_city
 echo "Syncing packages database"
 pacman -Sy --noconfirm
 
-echo "Verifying master keys"
-pacman-key --populate archlinux
-
-echo "Refreshing pacman's keyring"
-pacman-key --refresh-keys
+echo "Updating keyring"
+pacman -S --noconfirm archlinux-keyring
 
 echo "Creating partition tables"
 printf "n\n1\n4096\n+512M\nef00\nw\ny\n" | gdisk /dev/nvme0n1
