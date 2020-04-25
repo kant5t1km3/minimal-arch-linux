@@ -13,13 +13,12 @@ timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
 echo "Refreshing PGP keys"
-rm -r /usr/share/pacman/keyrings/archlinux-revoked 
-rm -r /usr/share/pacman/keyrings/archlinux-trusted 
-rm -r /usr/share/pacman/keyrings/archlinux.gpg
+sudo rm -r /etc/pacman.d/gnupg
 pacman-key --init
 pacman-key --populate archlinux
 pacman-key --refresh-keys
 pacman -Sc --noconfirm
+pacman -Sy --noconfirm gnupg archlinux-keyring
 
 echo "Syncing packages database"
 pacman -Sy --noconfirm
