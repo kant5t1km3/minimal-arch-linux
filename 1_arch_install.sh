@@ -12,11 +12,11 @@ echo "Updating system clock"
 timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
-echo "Sync packages database"
+echo "Syncing packages database"
 pacman -Sy --noconfirm
 
-echo "Repopulating trust database"
-pacman-key --populate archlinux
+echo "Refreshing pacman's keyring"
+pacman-key --refresh-keys
 
 echo "Creating partition tables"
 printf "n\n1\n4096\n+512M\nef00\nw\ny\n" | gdisk /dev/nvme0n1
