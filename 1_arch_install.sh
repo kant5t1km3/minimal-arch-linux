@@ -15,6 +15,9 @@ timedatectl set-timezone $continent_city
 echo "Syncing packages database"
 pacman -Sy --noconfirm
 
+echo "Verifying master keys"
+pacman-key --populate archlinux
+
 echo "Refreshing pacman's keyring"
 pacman-key --refresh-keys
 
