@@ -12,13 +12,21 @@ echo "Updating system clock"
 timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
+echo "Update Arch"
+pacman -Syu
+
 echo "Creating partition tables"
 printf "n\n1\n4096\n+512M\nef00\nw\ny\n" | gdisk /dev/nvme0n1
 printf "n\n2\n\n\n8e00\nw\ny\n" | gdisk /dev/nvme0n1
 
-echo "Zeroing partitions"
-cat /dev/zero > /dev/nvme0n1p1
-cat /dev/zero > /dev/nvme0n1p2
+# echo "Zeroing partitions"
+# cat /dev/zero > /dev/nvme0n1p1
+# cat /dev/zero > /dev/nvme0n1p2
+
+echo "Setting up /boot partition"
+yes | mkfs.fat -F32 /dev/nvme0n1p1
+mkdir /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
 
 echo "Setting up cryptographic volume"
 printf "%s" "$encryption_passphrase" | cryptsetup -h sha512 -s 512 --use-random --type luks2 luksFormat /dev/nvme0n1p2
@@ -38,11 +46,6 @@ echo "Setting up / partition"
 yes | mkfs.ext4 /dev/vg0/root
 mount /dev/vg0/root /mnt
 
-echo "Setting up /boot partition"
-yes | mkfs.fat -F32 /dev/nvme0n1p1
-mkdir /mnt/boot
-mount /dev/nvme0n1p1 /mnt/boot
-
 echo "Setting up swap"
 yes | mkswap /dev/vg0/swap
 swapon /dev/vg0/swap
@@ -56,7 +59,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 echo "Configuring new system"
 arch-chroot /mnt /bin/bash <<EOF
 echo "Setting system clock"
-ln -fs /usr/share/zoneinfo/$continent_city /etc/localtime
+ln -sf /usr/share/zoneinfo/$continent_city /etc/localtime
 hwclock --systohc --localtime
 
 echo "Setting locales"
