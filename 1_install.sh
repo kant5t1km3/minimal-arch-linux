@@ -15,7 +15,6 @@ timedatectl set-timezone $continent_city
 echo "Refreshing PGP keys"
 pacman-key --init
 pacman-key --populate archlinux
-pacman-key --refresh-keys
 pacman -Sc --noconfirm
 pacman -Sy --noconfirm gnupg archlinux-keyring
 
