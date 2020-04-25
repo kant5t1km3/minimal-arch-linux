@@ -12,11 +12,17 @@ echo "Updating system clock"
 timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
+echo "Refreshing PGP keys"
+rm -r /usr/share/pacman/keyrings/archlinux-revoked 
+rm -r /usr/share/pacman/keyrings/archlinux-trusted 
+rm -r /usr/share/pacman/keyrings/archlinux.gpg
+pacman-key --init
+pacman-key --populate archlinux
+pacman-key --refresh-keys
+pacman -Sc
+
 echo "Syncing packages database"
 pacman -Sy --noconfirm
-
-echo "Verifying master keys"
-pacman-key --populate archlinux
 
 echo "Creating partition tables"
 printf "n\n1\n4096\n+512M\nef00\nw\ny\n" | gdisk /dev/nvme0n1
