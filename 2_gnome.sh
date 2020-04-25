@@ -19,14 +19,15 @@ AutomaticLogin=$USER
 AutomaticLoginEnable=True
 END
 
-echo "Installing themes"
+echo "Downloading themes"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/themes
 mkdir -p ~/.themes
 wget -P ~/.themes https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-themes.tar
 tar -xzf ~/.themes/kali-themes.tar -C ~/.themes
 rm -f ~/.themes/kali-themes.tar
+gsettings set org.gnome.desktop.interface gtk-theme theme-name
 
-echo "Installing icon themes"
+echo "Downloading icon themes"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/icons
 mkdir -p ~/.icons
 wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-icons.tar

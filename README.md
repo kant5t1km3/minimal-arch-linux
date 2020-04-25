@@ -4,6 +4,9 @@
 | :---------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
 | ![clean](https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/clean.png) | ![busy](https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/busy.png) |
 
+## Gnome only
+- Only Gnome is supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
+
 ## Install script
 
 - LVM on LUKS
@@ -34,24 +37,11 @@
 
 ## Post install script
 
-- Sway (2_sway.sh), i3 (2_i3.sh), Gnome (2_gnome.sh) and KDE Plasma (2_plasma.sh) support
-- Plymouth
+- Gnome (2_gnome.sh)
 - UFW (deny incoming, allow outgoing)
-- Meslo NG Nerd Font
-- ZSH with Oh-My-Zsh and Powerlevel10k
-- Automatic login (with systemd)
-- yay (AUR helper)
-- swaywm:
-  - GTK theme and icons: Qogir win light + Papirus Dark icons
-  - autostart on tty1
-  - waybar: onclick pavucontrol (volume control) and nmtui (ncli network manager)
-  - swayidle and swaylock: automatic sleep and lock
-  - Termite terminal
-  - rofi as application launcher
-  - slurp and grim for screenshots
-  - Hibernate (power key) + suspend (lid close)
-  - thunar (with USB automonting)
-- Other applications: firefox, keepassxc, git, openssh, vim, Node.js LTS, tumbler, evince, thunderbird, upower, htop, VS code oss, nnn, neovim and a few others
+- Automatic login
+- Kali themes and icon themes
+- Automatic login
 
 ## Installation guide
 
@@ -67,9 +57,9 @@
 8. Run the script: `./1_arch_install.sh`
 9. Reboot into Arch Linux
 10. Connect to wifi with `nmtui`
-11. `wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/2_sway.sh`
-12. Make the script executable: `chmod +x 2_sway.sh`
-13. Run the script: `./2_sway.sh`
+11. `wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/2_gnome.sh`
+12. Make the script executable: `chmod +x 2_gnome.sh`
+13. Run the script: `./2_gnome.sh`
 
 ## Misc guides
 
@@ -82,6 +72,10 @@ z
 y
 y
 ```
+
+### Recommended Gnome extensions
+
+- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
 ### How to setup Github with SSH Key
 
@@ -104,15 +98,8 @@ mount /dev/vg0/Arch-root /mnt
 arch-chroot /mnt
 ```
 
-### How to install Go lang
-```
-echo "Installing Go lang"
-sudo pacman -S --noconfirm go dep go-tools
-```
-
 ### VSCode - Settings
 
-- Install ESLint on a per project basis: npm i eslint
 - Check the following settings:
   - editor.formatOnSave
   - Prettier: Use Tabs
@@ -125,12 +112,6 @@ sudo pacman -S --noconfirm go dep go-tools
 - [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
 - [Multi-touch Zoom](https://addons.mozilla.org/en-US/firefox/addon/multi-touch-zoom/)
 - [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
-- [Firefox - Ayu Mirage theme](https://addons.mozilla.org/en-US/firefox/addon/ayu-mirage/)
-
-### Recommended Gnome extensions
-
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
-- [Dynamic Panel Transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/)
 
 ### How to install yay
 ```
@@ -140,18 +121,6 @@ cd yay-bin
 makepkg -si --noconfirm
 cd ..
 rm -rf yay-bin
-```
-
-### How to install zsh with powerlevel10k and oh-my-zsh
-```
-echo "Installing and setting zsh, oh-my-zsh and powerlevel10k"
-sudo pacman -S --noconfirm zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME"/.oh-my-zsh/custom/themes/powerlevel10k
-rm -rf "$HOME"/.zshrc
-wget -P "$HOME" https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/configs/zsh/.zshrc
-rm -rf "$HOME"/.p10k.zsh
-wget -P "$HOME" https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/configs/zsh/.p10k.zsh
 ```
 
 ### Secure Boot with Linux Foundation Preloader
@@ -177,6 +146,3 @@ sudo plymouth-set-default-theme -R arch-breeze
 
 ### TODO (maybe)
 - [Support secure boot](https://wiki.archlinux.org/index.php/Secure_Boot)
-- Waybar: add battery discharge rate. Use [this config](https://gitlab.com/krathalan/waybar-modules/raw/3a652315f537ac957c37f08e55b5184da2b36cbd/mywaybar.jpg) as reference: [snippets](https://gitlab.com/snippets/1880686) and [modules](https://gitlab.com/krathalan/waybar-modules)
-- Use [swaylock-blur](https://github.com/cjbassi/swaylock-blur)
-- Add gestures to switch workspaces: [example](https://www.reddit.com/r/unixporn/comments/bd0l15/sway_real_world_student_workflow/ekv1ird?utm_source=share&utm_medium=web2x)
