@@ -26,9 +26,9 @@ echo "Creating partition tables"
 printf "n\n1\n4096\n+512M\nef00\nw\ny\n" | gdisk /dev/nvme0n1
 printf "n\n2\n\n\n8e00\nw\ny\n" | gdisk /dev/nvme0n1
 
-# echo "Zeroing partitions"
-# cat /dev/zero > /dev/nvme0n1p1
-# cat /dev/zero > /dev/nvme0n1p2
+echo "Zeroing partitions"
+cat /dev/zero > /dev/nvme0n1p1
+cat /dev/zero > /dev/nvme0n1p2
 
 echo "Setting up cryptographic volume"
 printf "%s" "$encryption_passphrase" | cryptsetup -h sha512 -s 512 --use-random --type luks2 luksFormat /dev/nvme0n1p2
