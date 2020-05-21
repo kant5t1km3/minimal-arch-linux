@@ -10,8 +10,6 @@ swap_size="1"
 
 echo "Updating system clock"
 timedatectl set-ntp true
-timedatectl set-timezone $continent_city
-hwclock -w
 
 # echo "Refreshing PGP keys"
 # pacman-key --init
