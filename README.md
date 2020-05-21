@@ -32,6 +32,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─Arch-root |  lvm  |     /      |
 
 ## Post install script
+- Gnome / KDE
 - UFW (deny incoming, allow outgoing)
 - Automatic login
 - Commom applications
