@@ -12,11 +12,11 @@ echo "Updating system clock"
 timedatectl set-ntp true
 timedatectl set-timezone $continent_city
 
-echo "Refreshing PGP keys"
-pacman-key --init
-pacman-key --populate archlinux
-pacman -Sc --noconfirm
-pacman -Sy --noconfirm gnupg archlinux-keyring
+# echo "Refreshing PGP keys"
+# pacman-key --init
+# pacman-key --populate archlinux
+# pacman -Sc --noconfirm
+# pacman -Sy --noconfirm gnupg archlinux-keyring
 
 echo "Syncing packages database"
 pacman -Sy --noconfirm
