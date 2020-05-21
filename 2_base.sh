@@ -14,8 +14,11 @@ sudo ufw default allow outgoing
 echo "Improving Intel GPU support"
 sudo pacman -S --noconfirm intel-media-driver
 
-echo "Adding Vulkan support"
-sudo pacman -S --noconfirm vulkan-intel vulkan-icd-loader
+echo "Adding multilib support"
+sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
+echo "Installing additional Intel drivers"
+sudo pacman -S --noconfirm lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
 
 echo "Installing common applications"
 sudo pacman -S --noconfirm firefox chromium keepassxc git openssh neovim links upower htop powertop p7zip ripgrep unzip code
