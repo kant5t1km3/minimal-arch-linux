@@ -16,14 +16,15 @@ sudo pacman -S --noconfirm plasma-wayland-session
 
 echo "Installing SDDM and SDDM-KCM"
 sudo pacman -S --noconfirm sddm sddm-kcm
+sudo systemctl enable sddm
 
 echo "Setting up autologin"
 sudo mkdir -p /etc/sddm.conf.d/
 sudo touch /etc/sddm.conf.d/autologin.conf
-sudo tee -a /etc/sddm.conf.d/autologin.conf << END
+sudo tee -a /etc/sddm.conf.d/autologin.conf << EOF
 [Autologin]
 User=$USER
 Session=plasma.desktop
-END 
+EOF
 
 echo "Your setup is ready. You can reboot now!"
