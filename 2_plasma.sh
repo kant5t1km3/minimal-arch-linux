@@ -11,7 +11,7 @@ sudo pacman -S --noconfirm xorg
 echo "Installing Plasma and common applications"
 sudo pacman -S --noconfirm plasma ark dolphin dolphin-plugins gwenview kaccounts-integration kaccounts-providers kate kgpg kmail konsole kwalletmanager okular spectacle plasma-browser-integration
 
-echo "Improve Discover"
+echo "Improve Discover support"
 sudo pacman -S --noconfirm packagekit-qt5 fwupd
 
 echo "Installing Plasma wayland session"
