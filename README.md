@@ -1,11 +1,7 @@
 # Minimal Arch Linux setup - Install scripts
 
-|                                                 Clean                                                 |                                               Busy                                                |
-| :---------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-| ![clean](https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/clean.png) | ![busy](https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/busy.png) |
-
-## Gnome only
-- Only Gnome is supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
+## Gnome and KDE Plasma only
+- Only Gnome and KDE Plasma are supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
 
 ## Install script
 
@@ -36,12 +32,12 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─Arch-root |  lvm  |     /      |
 
 ## Post install script
-
-- Gnome (2_gnome.sh)
 - UFW (deny incoming, allow outgoing)
 - Automatic login
-- Kali themes and icon themes
-- Automatic login
+- Commom applications
+- Fonts
+- Wallpapers
+- Intel: vulkan + intel-media-driver
 
 ## Installation guide
 
