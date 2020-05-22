@@ -39,6 +39,7 @@
 - Fonts
 - Wallpapers
 - Intel: vulkan + intel-media-driver
+- Multilib
 
 ## Installation guide
 
