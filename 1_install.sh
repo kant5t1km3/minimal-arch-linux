@@ -1,12 +1,12 @@
 #!/bin/bash
 
-encryption_passphrase="test"
-root_password="test"
-user_password="test"
-hostname="vm"
-user_name="test"
+encryption_passphrase=""
+root_password=""
+user_password=""
+hostname=""
+user_name=""
 continent_city=""
-swap_size="1"
+swap_size="16"
 
 echo "Updating system clock"
 timedatectl set-ntp true
