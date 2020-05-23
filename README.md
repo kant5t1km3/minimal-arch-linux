@@ -57,8 +57,8 @@
 8. Run the script: `./1_install.sh`
 9. Reboot into Arch Linux
 10. Connect to wifi with `nmtui`
-11. `wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/2_gnome.sh`
-12. Make the script executable: `chmod +x 2_gnome.sh`
+11. `wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/2_plasma.sh`
+12. Make the script executable: `chmod +x 2_plasma.sh`
 13. Run the script: `./2_gnome.sh`
 
 ## Misc guides
