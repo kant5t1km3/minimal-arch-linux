@@ -32,10 +32,10 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─vg0-root |  lvm  |     /      |
 
 ## Post install script
-- Gnome / KDE
+- Gnome / KDE (separate scripts)
 - UFW (deny incoming, allow outgoing)
 - Automatic login
-- Commom applications
+- Common applications
 - Fonts
 - Wallpapers
 - Intel: vulkan + intel-media-driver
@@ -72,10 +72,6 @@ y
 y
 ```
 
-### Recommended Gnome extensions
-
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
-
 ### How to setup Github with SSH Key
 
 ```
@@ -84,7 +80,17 @@ git config --global user.name "Github username"
 ssh-keygen -t rsa -b 4096 -C "Github email"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
-copy SSH key and add to Github (eg. nvim ~/.ssh/id_rsa.pub and copy content)
+copy SSH key and add to Github (eg. nvim ~/.ssh/id_rsa.pub and copy content into github.com)
+```
+
+### How to install yay (AUR helper)
+```
+echo "Installing yay"
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si --noconfirm
+cd ..
+rm -rf yay-bin
 ```
 
 ### How to chroot
@@ -97,30 +103,9 @@ mount /dev/vg0/Arch-root /mnt
 arch-chroot /mnt
 ```
 
-### VSCode - Settings
+### Recommended Gnome extensions
 
-- Check the following settings:
-  - editor.formatOnSave
-  - Prettier: Use Tabs
-  - enablePreview
-  - @tag:usesOnlineServices
-
-### Recommended Firefox add-ons
-
-- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
-- [HTTPS Everywhere](https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/)
-- [Multi-touch Zoom](https://addons.mozilla.org/en-US/firefox/addon/multi-touch-zoom/)
-- [Privacy Badger](https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/)
-
-### How to install yay
-```
-echo "Installing yay"
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si --noconfirm
-cd ..
-rm -rf yay-bin
-```
+- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
 
 ### Secure Boot with Linux Foundation Preloader
 ```
@@ -142,6 +127,3 @@ echo "Installing and setting plymouth theme"
 yay -S --noconfirm plymouth-theme-arch-breeze-git
 sudo plymouth-set-default-theme -R arch-breeze
 ```
-
-### TODO (maybe)
-- [Support secure boot](https://wiki.archlinux.org/index.php/Secure_Boot)
