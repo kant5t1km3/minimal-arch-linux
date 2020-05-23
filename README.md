@@ -100,7 +100,7 @@ rm -rf yay-bin
 mkdir -p /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 cryptsetup luksOpen /dev/nvme0n1p2 cryptlvm
-mount /dev/vg0/Arch-root /mnt
+mount /dev/vg0/root /mnt
 arch-chroot /mnt
 ```
 
