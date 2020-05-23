@@ -27,7 +27,7 @@ sudo touch /etc/sddm.conf.d/autologin.conf
 sudo tee -a /etc/sddm.conf.d/autologin.conf << EOF
 [Autologin]
 User=$USER
-Session=plasma.desktop
+Session=plasmawayland.desktop
 EOF
 
 echo "Your setup is ready. You can reboot now!"
