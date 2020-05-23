@@ -28,8 +28,8 @@
 | ├─nvme0n1p1                                           | part  |   /boot    |
 | ├─nvme0n1p2                                           | part  |            |
 | &nbsp;&nbsp;&nbsp;└─cryptlvm                        | crypt |            |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─Arch-swap |  lvm  |   [SWAP]   |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─Arch-root |  lvm  |     /      |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├─vg0-swap |  lvm  |   [SWAP]   |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─vg0-root |  lvm  |     /      |
 
 ## Post install script
 - Gnome / KDE
@@ -40,6 +40,7 @@
 - Wallpapers
 - Intel: vulkan + intel-media-driver
 - Multilib
+- Lutris with Wine support (commented)
 
 ## Installation guide
 
