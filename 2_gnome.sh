@@ -22,16 +22,16 @@ END
 echo "Downloading themes (modified KaliLinux theme, without the dragon)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/themes
 mkdir -p ~/.themes
-wget -P ~/.themes https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-themes.tar
-tar -xzf ~/.themes/kali-themes.tar -C ~/.themes
-rm -f ~/.themes/kali-themes.tar
+wget -P ~/.themes https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-themes.tar.gz
+tar -xzf ~/.themes/kali-themes.tar.gz -C ~/.themes
+rm -f ~/.themes/kali-themes.tar.gz
 
 echo "Downloading icon themes (KaliLinux icons)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/icons
 mkdir -p ~/.icons
-wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-icons.tar
-tar -xzf ~/.icons/kali-icons.tar -C ~/.icons
-rm -f ~/.icons/kali-icons.tar
+wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-icons.tar.gz
+tar -xzf ~/.icons/kali-icons.tar.gz -C ~/.icons
+rm -f ~/.icons/kali-icons.tar.gz
 
 echo "Setting themes"
 gsettings set org.gnome.desktop.interface gtk-theme Kali-Light
