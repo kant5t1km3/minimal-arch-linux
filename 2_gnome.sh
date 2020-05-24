@@ -33,4 +33,12 @@ wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/ma
 tar -xzf ~/.icons/kali-icons.tar -C ~/.icons
 rm -f ~/.icons/kali-icons.tar
 
+echo "Setting themes"
+gsettings set org.gnome.desktop.interface gtk-theme Kali-Light
+gsettings set org.gnome.desktop.interface icon-theme Flat-Remix-Blue-Dark
+
+echo "Setting misc configurations"
+gsettings set org.gnome.desktop.interface clock-show-date true
+gsettings set org.gnome.desktop.calendar show-weekdate true
+
 echo "Your setup is ready. You can reboot now!"
