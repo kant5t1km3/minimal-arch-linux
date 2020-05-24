@@ -15,7 +15,7 @@ echo "Adding Thunderbolt frontend"
 sudo pacman -S --noconfirm plasma-thunderbolt
 
 echo "Improve Discover support"
-sudo pacman -S --noconfirm packagekit-qt5 fwupd
+sudo pacman -S --noconfirm packagekit-qt5
 
 echo "Installing Plasma wayland session"
 sudo pacman -S --noconfirm plasma-wayland-session
