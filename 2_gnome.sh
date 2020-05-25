@@ -19,14 +19,14 @@ AutomaticLogin=$USER
 AutomaticLoginEnable=True
 END
 
-echo "Downloading themes (modified KaliLinux theme, without the dragon)"
+echo "Downloading themes (Kali Linux theme without the dragon)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/themes
 mkdir -p ~/.themes
 wget -P ~/.themes https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-themes.tar.gz
 tar -xzf ~/.themes/kali-themes.tar.gz -C ~/.themes
 rm -f ~/.themes/kali-themes.tar.gz
 
-echo "Downloading icon themes (KaliLinux icons)"
+echo "Downloading icon themes (Kali Linux icons)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/icons
 mkdir -p ~/.icons
 wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/themes/kali-icons.tar.gz
