@@ -34,11 +34,25 @@ tar -xzf ~/.icons/kali-icons.tar.xz -C ~/.icons
 rm -f ~/.icons/kali-icons.tar.xz
 
 echo "Setting themes"
-gsettings set org.gnome.desktop.interface gtk-theme Kali-Light
-gsettings set org.gnome.desktop.interface icon-theme Flat-Remix-Blue-Dark
+gsettings set org.gnome.shell enabled-extensions ['user-theme@gnome-shell-extensions.gcampax.github.com']
+gsettings set org.gnome.desktop.interface gtk-theme 'Kali-Light'
+gsettings set org.gnome.desktop.interface icon-theme 'Flat-Remix-Blue-Dark'
+gsettings set org.gnome.shell.extensions.user-theme name 'Kali-Dark'
 
 echo "Setting misc configurations"
+gsettings set org.gnome.desktop.calendar show-weekdate true
 gsettings set org.gnome.desktop.interface clock-show-date true
 gsettings set org.gnome.desktop.calendar show-weekdate true
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+gsettings set org.gnome.desktop.peripherals.touchpad disable-while-typing false
+gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
+
+echo "Setting font sizes"
+gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Cantarell Bold 10'
+gsettings set org.gnome.desktop.interface font-name 'Cantarell 10'
+gsettings set org.gnome.desktop.interface document-font-name 'Cantarell 10'
+
 
 echo "Your setup is ready. You can reboot now!"
