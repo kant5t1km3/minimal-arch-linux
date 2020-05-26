@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "Updating packages"
+echo "Adding multilib support"
+sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
+echo "Syncing repos and updating packages"
 sudo pacman -Syu --noconfirm
 
 echo "Installing and configuring UFW"
@@ -10,9 +13,6 @@ sudo systemctl start ufw
 sudo ufw enable
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-
-echo "Adding multilib support"
-sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 echo "Installing additional Intel drivers"
 sudo pacman -S --noconfirm intel-media-driver lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
