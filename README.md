@@ -1,4 +1,4 @@
-# Arch Linux - Install scripts
+# Arch Linux install scripts
 
 ## Gnome and KDE Plasma only
 - Only Gnome and KDE Plasma are supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
