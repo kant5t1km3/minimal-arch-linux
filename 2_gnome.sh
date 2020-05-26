@@ -15,12 +15,12 @@ echo "Enabling GDM"
 sudo systemctl enable gdm.service
 
 echo "Enabling automatic login"
-sudo tee -a /etc/gdm/custom.conf << END
+sudo tee -a /etc/gdm/custom.conf << EOF
 # Enable automatic login for user
 [daemon]
 AutomaticLogin=$USER
 AutomaticLoginEnable=True
-END
+EOF
 
 echo "Downloading themes (Kali Linux theme without the dragon)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/themes
