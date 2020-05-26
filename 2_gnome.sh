@@ -50,7 +50,6 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 gsettings set org.gnome.desktop.peripherals.touchpad disable-while-typing false
-gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
 
 echo "Setting font sizes"
 gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Cantarell Bold 10'
