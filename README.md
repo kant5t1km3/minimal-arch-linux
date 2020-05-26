@@ -48,7 +48,7 @@
 1. Download and boot into the latest [Arch Linux iso](https://www.archlinux.org/download/)
 2. Connect to the internet. If using wifi, you can use `wifi-menu` to connect to a network
 3. Clear all existing partitions (see below: MISC - How to clear all partitions)
-4. (optional) Give highest priority to the closest mirror to you on /etc/pacman.d/mirrorlist by moving it to the top
+4. Give highest priority to the closest mirror to you on /etc/pacman.d/mirrorlist by moving it to the top
 5. `wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/1_install.sh`
 6. Change the variables at the top of the file (lines 3 through 9)
    - continent_country must have the following format: Zone/SubZone . e.g. Europe/Berlin
