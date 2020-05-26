@@ -1,8 +1,5 @@
 # Arch Linux install scripts
 
-## Gnome and KDE Plasma only
-- Only Gnome and KDE Plasma are supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
-
 ## Install script
 
 - LVM on LUKS
@@ -104,18 +101,6 @@ mount /dev/vg0/root /mnt
 arch-chroot /mnt
 ```
 
-### Recommended Gnome extensions
-
-- [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
-
-### Secure Boot with Linux Foundation Preloader
-```
-yay -S preloader-signed
-sudo cp /usr/share/preloader-signed/{PreLoader,HashTool}.efi /boot/EFI/systemd
-sudo cp /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/systemd/loader.efi
-sudo efibootmgr --verbose --disk /dev/nvme0n1 --part 1 --create --label "PreLoader" --loader /EFI/systemd/PreLoader.efi
-```
-
 ### Plymouth
 ```
 echo "Installing and configuring Plymouth"
@@ -128,3 +113,6 @@ echo "Installing and setting plymouth theme"
 yay -S --noconfirm plymouth-theme-arch-breeze-git
 sudo plymouth-set-default-theme -R arch-breeze
 ```
+
+### Gnome and KDE Plasma only
+- Only Gnome and KDE Plasma are supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
