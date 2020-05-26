@@ -62,4 +62,11 @@ sudo sed -i 's/PercentageLow=10/PercentageLow=20/g' /etc/UPower/UPower.conf
 sudo sed -i 's/PercentageCritical=3/PercentageCritical=10/g' /etc/UPower/UPower.conf
 sudo sed -i 's/PercentageAction=2/PercentageAction=5/g' /etc/UPower/UPower.conf
 
+echo "Setting custom shortcuts"
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Super>Return'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'gnome-terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Gnome Terminal'
+gsettings set org.gnome.desktop.wm.keybindings close ['<Shift><Super>q']
+
 echo "Your setup is ready. You can reboot now!"
