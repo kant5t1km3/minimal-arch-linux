@@ -68,4 +68,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Gnome Terminal'
 gsettings set org.gnome.desktop.wm.keybindings close ['<Shift><Super>q']
 
+echo "Disabling select search providers"
+gsettings set org.gnome.desktop.search-providers disabled ['org.gnome.Epiphany.desktop', 'org.gnome.Software.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Characters.desktop']
+
 echo "Your setup is ready. You can reboot now!"
