@@ -33,12 +33,12 @@
 - Gnome / KDE (separate scripts)
 - UFW (deny incoming, allow outgoing)
 - Automatic login
-- Common applications
 - Fonts
 - Wallpapers
 - Intel: vulkan + intel-media-driver
 - Multilib
 - Lutris with Wine support (commented)
+- Flatpak support with automatic updates via systemd timer (Firefox installed as Flatpak)
 
 ## Installation guide
 
