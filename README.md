@@ -39,7 +39,7 @@
 - Multilib
 - Lutris with Wine support (commented)
 - Flatpak support with automatic updates via systemd timer (Firefox installed as Flatpak)
-- Base16 theme (Sway only): alacritty, rofi, vim, airtline
+- Base16 theme (Sway only): alacritty, rofi, vim, airline
    - https://github.com/chriskempson/base16
 
 ## Installation guide
@@ -56,9 +56,9 @@
 8. Run the script: `./1_install.sh`
 9. Reboot into Arch Linux
 10. Connect to wifi with `nmtui`
-11. `wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/2_gnome.sh` or `2_plasma.sh`
-12. Make the script executable: `chmod +x 2_gnome.sh` or `chmod +x 2_plasma.sh`
-13. Run the script: `./2_gnome.sh` or `./2_plasma.sh`
+11. `wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/2_gnome.sh` or `2_plasma.sh` or `2_sway.sh`
+12. Make the script executable: `chmod +x 2_gnome.sh` or `chmod +x 2_plasma.sh` or `chmod +x 2_sway.sh`
+13. Run the script: `./2_gnome.sh` or `./2_plasma.sh` or `./2_sway.sh`
 
 ## Misc guides
 
