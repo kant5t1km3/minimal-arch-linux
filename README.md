@@ -30,7 +30,7 @@
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─vg0-root |  lvm  |     /      |
 
 ## Post install script
-- Gnome / KDE (separate scripts)
+- Gnome / KDE / Sway (separate scripts)
 - UFW (deny incoming, allow outgoing)
 - Automatic login
 - Fonts
@@ -39,6 +39,8 @@
 - Multilib
 - Lutris with Wine support (commented)
 - Flatpak support with automatic updates via systemd timer (Firefox installed as Flatpak)
+- Base16 theme (Sway only): alacritty, rofi, vim, airtline
+   - https://github.com/chriskempson/base16
 
 ## Installation guide
 

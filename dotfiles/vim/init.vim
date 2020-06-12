@@ -1,6 +1,18 @@
-" You want Vim, not vi. When Vim finds a vimrc, 'nocompatible' is set anyway.
-" We set it explicitely to make our position clear!
-set nocompatible
+call plug#begin()
+Plug 'preservim/nerdtree'
+Plug 'chriskempson/base16-vim'
+Plugin 'vim-airline/vim-airline'
+call plug#end()
+
+" Set color scheme
+colorscheme base16-one-light
+
+" Toggle nerdtree
+map <C-n> :NERDTreeToggle<CR>
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 filetype plugin indent on  " Load plugins according to detected filetype.
 syntax on                  " Enable syntax highlighting.
