@@ -70,7 +70,7 @@ wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/snro7b9hso141.png
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/BU9AoyoEJgMgmmqKsAV7Kjr8PrRGhWiAZNRlbX8MWNw.png
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/DIGCO6c0q1wn3ueu_Uebpuv7BfKaQJgKhemcH_3vfVQ.png
-wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/nasa-japanese.jpg
+wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/nasajp.jpg
 
 # echo "Installing Node.js LTS"
 # sudo pacman -S --noconfirm nodejs-lts-erbium

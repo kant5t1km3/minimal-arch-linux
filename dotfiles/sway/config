@@ -3,7 +3,7 @@
 set $font Fira Code Regular 10
 
 # Background image
-set $background nasa-japanese.jpg
+set $background nasajp.jpg
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
