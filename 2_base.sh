@@ -15,7 +15,10 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing
 
 echo "Installing additional Intel drivers"
-sudo pacman -S --noconfirm intel-media-driver lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+sudo pacman -S --noconfirm mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+
+echo "Enabling video accelaration "
+sudo pacman -S --noconfirm libva libva-utils libva-intel-driver ffmpeg
 
 # Reference: https://github.com/lutris/docs/blob/master/WineDependencies.md
 # echo "Installing Lutris (with Wine support)
@@ -27,6 +30,7 @@ sudo pacman -S --noconfirm neovim keepassxc git openssh links upower htop powert
 echo "Installing Firefox Flatpak"
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user --assumeyes install flathub org.mozilla.firefox
+flatpak override --user --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.firefox
 
 echo "Setting automatic updates for Flatpak apps"
 touch ~/.config/systemd/user/flatpak-update.timer
@@ -66,9 +70,19 @@ wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/snro7b9hso141.png
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/BU9AoyoEJgMgmmqKsAV7Kjr8PrRGhWiAZNRlbX8MWNw.png
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/DIGCO6c0q1wn3ueu_Uebpuv7BfKaQJgKhemcH_3vfVQ.png
+wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/nasa-japanese.jpg
 
 # echo "Installing Node.js LTS"
 # sudo pacman -S --noconfirm nodejs-lts-erbium
 
 # echo "Increasing the amount of inotify watchers"
 # echo fs.inotify.max_user_watches=524288 | sudo tee /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl --system
+
+# echo "Installing zsh"
+# sudo pacman -S --noconfirm zsh zsh-completions
+# chsh -s /usr/bin/zsh
+
+# echo "Installing powerlevel10k theme"
+# git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+# wget -P ~/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/zsh/.p10k.zsh
+# wget -P ~/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/zsh/.zshrc
