@@ -5,7 +5,7 @@ wget https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/2_base.
 chmod +x 2_base.sh
 sh ./2_base.sh
 
-echo "Installing sway"
+echo "Installing sway and additional packages"
 sudo pacman -S --noconfirm sway swaylock swayidle waybar rofi light pulseaudio pavucontrol slurp grim
 
 echo "Ricing sway"
@@ -15,12 +15,11 @@ wget -P ~/.config/sway/ https://raw.githubusercontent.com/exah-io/minimal-arch-l
 echo "Ricing waybar"
 mkdir -p ~/.config/waybar
 wget -P ~/.config/waybar/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/waybar/config
+wget -P ~/.config/waybar/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/waybar/style.css
 
 echo "Ricing rofi"
-mkdir -p ~/.config/rofi/config
-wget -P ~/.config/rofi/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/rofi/base16-one-light.config
+mkdir -p ~/.config/rofi
 wget -P ~/.config/rofi/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/rofi/base16-one-light.rasi
-wget -P ~/.config/rofi/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/rofi/base16-onedark.config
 wget -P ~/.config/rofi/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/rofi/base16-onedark.rasi
 
 echo "Enabling sway autostart"
@@ -47,7 +46,7 @@ echo "Installing thunar with auto-mount and archives creation/deflation support"
 sudo pacman -S --noconfirm thunar gvfs thunar-volman thunar-archive-plugin ark file-roller xarchiver
 
 echo "Installing PDF viewer"
-sudo pacman -s --noconfirm xreader
+sudo pacman -S --noconfirm xreader
 
 echo "Installing Thunderbird Flatpak with Wayland support"
 flatpak --user --assumeyes install flathub org.mozilla.Thunderbird
