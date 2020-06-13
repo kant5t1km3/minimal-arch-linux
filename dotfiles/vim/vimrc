@@ -1,0 +1,15 @@
+" enable syntax highlighting
+:filetype plugin on
+:syntax on
+
+" enable indentation
+:filetype indent on
+
+" enable mouse usage
+set mouse=a
+
+" show line numbers
+:set number
+
+" highlight search results
+set incsearch
