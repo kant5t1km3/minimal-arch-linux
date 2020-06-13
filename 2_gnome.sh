@@ -32,9 +32,9 @@ rm -f ~/.themes/kali-themes.tar.gz
 echo "Downloading icon themes (Kali Linux icons)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/icons
 mkdir -p ~/.icons
-wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/icons/kali-icons.tar.xz
-tar -xzf ~/.icons/kali-icons.tar.xz -C ~/.icons
-rm -f ~/.icons/kali-icons.tar.xz
+wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/icons/kali-icons.tar.gz
+tar -xzf ~/.icons/kali-icons.tar.gz -C ~/.icons
+rm -f ~/.icons/kali-icons.tar.gz
 
 echo "Setting themes"
 gsettings set org.gnome.shell enabled-extensions ['user-theme@gnome-shell-extensions.gcampax.github.com']

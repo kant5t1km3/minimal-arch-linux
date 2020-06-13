@@ -16,7 +16,7 @@ set $right l
 
 # Terminal + Rofi
 set $term alacritty
-set $menu rofi -combi-modi window -theme base16-one-light -font "Fira Code 10" -show combi
+set $menu rofi -show drun
 
 # Background
 output * bg ~/Pictures/$background fill
@@ -26,8 +26,8 @@ font pango:$font
 
 # Gaps
 default_border pixel 1
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 hide_edge_borders smart
 client.focused #ffffff40 #ffffff40 #ffffff40 #ffffff40 #ffffff40
 

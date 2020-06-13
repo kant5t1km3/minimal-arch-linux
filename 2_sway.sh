@@ -27,7 +27,7 @@ touch ~/.bash_profile
 tee -a ~/.bash_profile << EOF
 # If running from tty1 start sway
 if [ "$(tty)" = "/dev/tty1" ]; then
-	exec sway
+    _JAVA_AWT_WM_NONREPARENTING=1 sway
 fi
 EOF
 
@@ -48,10 +48,6 @@ sudo pacman -S --noconfirm thunar gvfs thunar-volman thunar-archive-plugin ark f
 echo "Installing PDF viewer"
 sudo pacman -S --noconfirm xreader
 
-echo "Installing Thunderbird Flatpak with Wayland support"
-flatpak --user --assumeyes install flathub org.mozilla.Thunderbird
-flatpak override --user --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.Thunderbird
-
 echo "Downloading themes (Kali Linux theme without the dragon)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/themes
 mkdir -p ~/.themes
@@ -62,12 +58,12 @@ rm -f ~/.themes/kali-themes.tar.gz
 echo "Downloading icon themes (Kali Linux icons)"
 # Kali themes source: https://gitlab.com/kalilinux/packages/kali-themes/-/tree/kali/master/share/icons
 mkdir -p ~/.icons
-wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/icons/kali-icons.tar.xz
-tar -xzf ~/.icons/kali-icons.tar.xz -C ~/.icons
-rm -f ~/.icons/kali-icons.tar.xz
+wget -P ~/.icons https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/icons/kali-icons.tar.gz
+tar -xzf ~/.icons/kali-icons.tar.gz -C ~/.icons
+rm -f ~/.icons/kali-icons.tar.gz
 
 echo "Setting GTK theme, font and icons"
-FONT="Fira Code Regular 10"
+FONT="Cantarell Regular 10"
 GTK_THEME="Kali-Light"
 GTK_ICON_THEME="Flat-Remix-Blue-Dark"
 GTK_SCHEMA="org.gnome.desktop.interface"

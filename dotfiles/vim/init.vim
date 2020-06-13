@@ -1,7 +1,7 @@
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'chriskempson/base16-vim'
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " Set color scheme
@@ -40,7 +40,6 @@ set lazyredraw             " Only redraw when necessary.
 set splitbelow             " Open new windows below the current window.
 set splitright             " Open new windows right of the current window.
 
-set cursorline             " Find the current line quickly.
 set wrapscan               " Searches wrap around end-of-file.
 set report      =0         " Always report changed lines.
 set synmaxcol   =200       " Only highlight the first 200 columns.
@@ -51,15 +50,3 @@ if has('multi_byte') && &encoding ==# 'utf-8'
 else
   let &listchars = 'tab:> ,extends:>,precedes:<,nbsp:.'
 endif
-
-" Put all temporary files under the same directory.
-" https://github.com/mhinz/vim-galore#handling-backup-swap-undo-and-viminfo-files
-set backup
-set backupdir   =$HOME/.vim/files/backup/
-set backupext   =-vimbackup
-set backupskip  =
-set directory   =$HOME/.vim/files/swap//
-set updatecount =100
-set undofile
-set undodir     =$HOME/.vim/files/undo/
-set viminfo     ='100,n$HOME/.vim/files/info/viminfo

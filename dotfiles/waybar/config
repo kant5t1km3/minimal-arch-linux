@@ -1,12 +1,7 @@
 {
     "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar at the bottom of your screen
-    // "height": 30, // Waybar height
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["battery", "network", "pulseaudio", "backlight", "cpu", "memory", "clock", "tray"],
+    "modules-right": ["pulseaudio", "battery", "backlight", "network", "clock", "tray"],
     "sway/mode": {
         "format": "{}"
     },
@@ -21,15 +16,9 @@
         "interval": 1,
         "format": "{:%a %b %d %H:%M:%S}"
     },
-    "cpu": {
-        "format": "CPU: {}%"
-    },
-    "memory": {
-        "format": "Ram: {}%"
-    },
     "battery": {
         "interval": 2,
-        "format": "Bat: {capacity}%"
+        "format": "Battery: {capacity}%"
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
@@ -39,7 +28,7 @@
     },
     "pulseaudio": {
         //"scroll-step": 1,
-        "format": "Vol: {volume}%",
+        "format": "Volume: {volume}%",
         "on-click": "pavucontrol"
     },
     "backlight": {

@@ -32,7 +32,15 @@ flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flath
 flatpak --user --assumeyes install flathub org.mozilla.firefox
 flatpak override --user --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.firefox
 
+echo "Installing ZAProxy Flatpak"
+flatpak --user --assumeyes install flathub flatpak install flathub org.zaproxy.ZAP
+
+echo "Installing Thunderbird Flatpak with Wayland support"
+flatpak --user --assumeyes install flathub org.mozilla.Thunderbird
+flatpak override --user --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.Thunderbird
+
 echo "Setting automatic updates for Flatpak apps"
+mkdir -p ~/.config/systemd/user/
 touch ~/.config/systemd/user/flatpak-update.timer
 tee -a ~/.config/systemd/user/flatpak-update.timer << EOF
 [Unit]
