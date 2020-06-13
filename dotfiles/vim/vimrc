@@ -1,5 +1,9 @@
 set nocompatible
 
+" set colorscheme
+colorscheme base16-one-light
+let base16colorspace=256
+
 " enable syntax highlighting
 filetype plugin on
 syntax enable 
