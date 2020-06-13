@@ -34,6 +34,9 @@ EOF
 echo "Ricing vim"
 mkdir -p ~/.vim
 wget -P ~/.vim https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/vim/vimrc
+mkdir -p ~/.vim/colors
+wget -P ~/.vim/colors https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/vim/base16-one-light.vim
+wget -P ~/.vim/colors https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/dotfiles/vim/base16-onedark.vim
 
 echo "Installing and ricing Alacritty terminal"
 sudo pacman -S --noconfirm alacritty

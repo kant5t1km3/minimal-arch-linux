@@ -80,6 +80,13 @@ wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/DIGCO6c0q1wn3ueu_Uebpuv7BfKaQJgKhemcH_3vfVQ.png
 wget -P ~/Pictures/ https://raw.githubusercontent.com/exah-io/minimal-arch-linux/master/wallpapers/nasajp.jpg
 
+echo "Ricing bash"
+touch ~/.bashrc
+tee -a ~/.bashrc << EOF
+export PS1="\w \\$  "
+PROMPT_COMMAND='PROMPT_COMMAND='\''PS1="\n\w \\$  "'\'
+EOF
+
 # echo "Installing Node.js LTS"
 # sudo pacman -S --noconfirm nodejs-lts-erbium
 
