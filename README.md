@@ -120,3 +120,8 @@ sudo plymouth-set-default-theme -R arch-breeze
 ```
 Only Gnome and KDE Plasma are supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
 ```
+
+### to test
+```
+kernel compression with lz4 (install script): sed -i 's/#COMPRESSION=/COMPRESSION=lz4/g' /etc/mkinitcpio.conf
+```
