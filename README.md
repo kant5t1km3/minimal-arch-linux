@@ -10,6 +10,7 @@
 - Intel microcode
 - Standard Kernel + LTS kernel as fallback
 - Hibernate support
+- Kernel: LZ4 compression
 
 ### Requirements
 
