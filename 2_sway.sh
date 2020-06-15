@@ -77,14 +77,12 @@ echo "Enabling suspend and hibernate hotkeys"
 sudo sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=hibernate/g' /etc/systemd/logind.conf
 sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=suspend/g' /etc/systemd/logind.conf
 
-echo "Blacklisting bluetooth"
+echo "Blacklisting bluetooth modules"
 sudo touch /etc/modprobe.d/nobt.conf
 sudo tee -a /etc/modprobe.d/nobt.conf << END
 blacklist btusb
 blacklist bluetooth
 END
-sudo mkinitcpio -p linux-lts
-sudo mkinitcpio -p linux
 
 echo "Enabling autologin"
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
