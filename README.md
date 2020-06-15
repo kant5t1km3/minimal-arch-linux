@@ -88,16 +88,6 @@ ssh-add ~/.ssh/id_rsa
 copy SSH key and add to Github (eg. nvim ~/.ssh/id_rsa.pub and copy content into github.com)
 ```
 
-### How to install yay (AUR helper)
-```
-echo "Installing yay"
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si --noconfirm
-cd ..
-rm -rf yay-bin
-```
-
 ### How to chroot
 
 ```
@@ -106,19 +96,4 @@ mount /dev/nvme0n1p1 /mnt/boot
 cryptsetup luksOpen /dev/nvme0n1p2 cryptlvm
 mount /dev/vg0/root /mnt
 arch-chroot /mnt
-```
-
-### Plymouth
-```
-echo "Installing and configuring Plymouth"
-yay -S --noconfirm plymouth
-sudo sed -i 's/base systemd autodetect/base systemd sd-plymouth autodetect/g' /etc/mkinitcpio.conf
-sudo sed -i 's/quiet rw/quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0 rw/g' /boot/loader/entries/arch.conf
-sudo mkinitcpio -p linux
-sudo systemctl disable sddm
-sudo systemctl enable sddm-plymouth.service
-
-echo "Installing and setting plymouth theme"
-yay -S --noconfirm plymouth-theme-arch-breeze-git
-sudo plymouth-set-default-theme -R arch-breeze
 ```
