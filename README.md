@@ -37,7 +37,7 @@
 - Automatic login
 - Fonts
 - Wallpapers
-- Intel: vulkan + intel-media-driver
+- Intel: vulkan + intel-vaapi-driver
 - Multilib
 - yay (AUR helper)
 - Plymouth
