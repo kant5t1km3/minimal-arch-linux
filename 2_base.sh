@@ -66,6 +66,12 @@ export PS1="\w \\$  "
 PROMPT_COMMAND='PROMPT_COMMAND='\''PS1="\n\w \\$  "'\'
 EOF
 
+echo "Blacklisting watchdog modules"
+sudo touch /etc/modprobe.d/nowatchdog.conf
+sudo tee -a /etc/modprobe.d/nowatchdog.conf << EOF
+blacklist iTCO_wdt
+EOF
+
 # echo "Installing Node.js LTS"
 # sudo pacman -S --noconfirm nodejs-lts-erbium
 
