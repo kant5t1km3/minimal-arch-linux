@@ -100,3 +100,35 @@ touch ~/.hushlogin
 
 echo "Installing xwayland"
 sudo pacman -S --noconfirm xorg-server-xwayland
+
+echo "Installing Thunderbird Flatpak with Wayland support"
+flatpak --user --assumeyes install flathub org.mozilla.Thunderbird
+flatpak override --user --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.Thunderbird
+
+echo "Setting automatic updates for Flatpak apps"
+mkdir -p ~/.config/systemd/user/
+touch ~/.config/systemd/user/flatpak-update.timer
+tee -a ~/.config/systemd/user/flatpak-update.timer << EOF
+[Unit]
+Description=Flatpak update
+
+[Timer]
+OnCalendar=7:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+EOF
+
+touch ~/.config/systemd/user/flatpak-update.service
+tee -a ~/.config/systemd/user/flatpak-update.service << EOF
+[Unit]
+Description=Flatpak update
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak update -y
+EOF
+
+systemctl --user enable flatpak-update.timer
+systemctl --user start flatpak-update.timer
