@@ -89,6 +89,7 @@ echo -en "$user_password\n$user_password" | passwd $user_name
 echo "Generating initramfs"
 sed -i 's/^HOOKS.*/HOOKS=(base systemd autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 filesystems fsck)/' /etc/mkinitcpio.conf
 sed -i 's/^MODULES.*/MODULES=(ext4 intel_agp i915)/' /etc/mkinitcpio.conf
+sed -i 's/#COMPRESSION="lz4"/COMPRESSION="lz4"/g' /etc/mkinitcpio.conf
 mkinitcpio -p linux
 mkinitcpio -p linux-lts
 
