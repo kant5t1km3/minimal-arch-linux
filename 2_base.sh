@@ -32,6 +32,20 @@ flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flath
 flatpak --user --assumeyes install flathub org.mozilla.firefox
 flatpak override --user --env=MOZ_ENABLE_WAYLAND=1 org.mozilla.firefox
 
+echo "Improving font rendering issues with Firefox Flatpak on Wayland"
+mkdir -p ~/.var/app/org.mozilla.firefox/config/fontconfig
+touch ~/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf
+tee -a ~/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf << EOF
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+    <!-- Disable bitmap fonts. -->
+    <selectfont><rejectfont><pattern>
+        <patelt name="scalable"><bool>false</bool></patelt>
+    </pattern></rejectfont></selectfont>
+</fontconfig>
+EOF
+
 echo "Creating user's folders"
 sudo pacman -S --noconfirm xdg-user-dirs
 
