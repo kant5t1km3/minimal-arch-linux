@@ -11,6 +11,7 @@
 - Standard Kernel + LTS kernel as fallback
 - Hibernate support
 - Kernel: LZ4 compression
+- Disable watchdog
 
 ### Requirements
 
