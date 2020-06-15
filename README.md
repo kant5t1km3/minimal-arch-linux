@@ -39,10 +39,13 @@
 - Wallpapers
 - Intel: vulkan + intel-media-driver
 - Multilib
+- yay (AUR helper)
+- Plymouth
+- Flatpak support - Firefox installed as Flatpak
 - Lutris with Wine support (commented)
-- Flatpak support with automatic updates via systemd timer (Firefox installed as Flatpak)
-- Base16 theme (Sway only): alacritty, rofi, vim, airline
-   - https://github.com/chriskempson/base16
+- Sway only:
+   - Base16 theme: alacritty, rofi, vim
+   - Flatpak: automatic updates via systemd timer
 
 ## Installation guide
 
