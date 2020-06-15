@@ -110,7 +110,9 @@ echo "Installing and configuring Plymouth"
 yay -S --noconfirm plymouth
 sudo sed -i 's/base systemd autodetect/base systemd sd-plymouth autodetect/g' /etc/mkinitcpio.conf
 sudo sed -i 's/quiet rw/quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0 rw/g' /boot/loader/entries/arch.conf
-# Arch LTS left out on purpose, in case there's an issue with Plymouth
+sudo mkinitcpio -p linux
+sudo systemctl disable sddm
+sudo systemctl enable sddm-plymouth.service
 
 echo "Installing and setting plymouth theme"
 yay -S --noconfirm plymouth-theme-arch-breeze-git
@@ -120,9 +122,4 @@ sudo plymouth-set-default-theme -R arch-breeze
 ### Gnome and KDE Plasma only
 ```
 Only Gnome and KDE Plasma are supported now. To see alternative DE/WM setups refer to the repository at [this commit](https://github.com/exah-io/minimal-arch-linux/tree/660ea7e57cfb3f89879dd3bfb47b3d4dd1f569f5)
-```
-
-### to test
-```
-kernel compression with lz4 (install script): sed -i 's/#COMPRESSION=/COMPRESSION=lz4/g' /etc/mkinitcpio.conf
 ```
