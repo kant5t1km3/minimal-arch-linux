@@ -33,4 +33,8 @@ User=$USER
 Session=plasmawayland.desktop
 EOF
 
+echo "Improving Plymouth support"
+sudo systemctl disable sddm
+sudo systemctl enable sddm-plymouth.service
+
 echo "Your setup is ready. You can reboot now!"
