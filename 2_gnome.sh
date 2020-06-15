@@ -71,4 +71,8 @@ gsettings set org.gnome.desktop.wm.keybindings close ['<Shift><Super>q']
 echo "Disabling select search providers"
 gsettings set org.gnome.desktop.search-providers disabled ['org.gnome.Epiphany.desktop', 'org.gnome.Software.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Characters.desktop']
 
+echo "Improving Plymouth support"
+sudo systemctl disable gdm.service
+sudo systemctl enable gdm-plymouth.service
+
 echo "Your setup is ready. You can reboot now!"
