@@ -80,14 +80,12 @@ cd ..
 rm -rf yay-bin
 
 echo "Installing and configuring Plymouth"
-yay -S --noconfirm plymouth
+yay -S --noconfirm plymouth-git
 sudo sed -i 's/base systemd autodetect/base systemd sd-plymouth autodetect/g' /etc/mkinitcpio.conf
 sudo sed -i 's/quiet rw/quiet splash loglevel=3 rd.udev.log_priority=3 vt.global_cursor_default=0 rw/g' /boot/loader/entries/arch.conf
 sudo mkinitcpio -p linux
-
-echo "Installing and setting plymouth theme"
-yay -S --noconfirm plymouth-theme-arch-breeze-git
-sudo plymouth-set-default-theme -R arch-breeze
+sudo plymouth-set-default-theme -R bgrt
+sudo cp /usr/share/plymouth/arch-logo.png /usr/share/plymouth/themes/bgrt/watermark.png
 
 # echo "Installing Node.js LTS"
 # sudo pacman -S --noconfirm nodejs-lts-erbium
